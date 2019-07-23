@@ -1,0 +1,18 @@
+<script>
+$('.urlintext').on('click', function() { 
+	tinymce.activeEditor.selection.setContent('<a href="[urlintext_'+ $('#typeobj').val() +'_'+ $('#idobj').val() +'_url]" title="[urlintext_'+ $('#typeobj').val() +'_'+ $('#idobj').val() +'_title]">'+ tinymce.activeEditor.selection.getContent() +'</a>');
+}); 
+$('#typeobj').change(function(){
+	
+	$.ajax({
+		method: "POST",
+		url: "{url path="/admin/modules/urlintext/urlintextajax"}",
+		data: { typeobj: $('#typeobj').val()}
+	})
+	.done(function( result ) {
+		$('#idobj').html(result);
+	});
+	
+});
+	
+</script>

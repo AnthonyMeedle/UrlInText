@@ -1,0 +1,37 @@
+{if $smarty.post.typeobj == 0}
+	<option value="">Catégories</option>
+	{loop type="category" name="cateegory"}
+	<option value="{$ID}">{$TITLE}</option>
+	{/loop}	
+{/if}
+{if $smarty.post.typeobj == 1}
+	<option value="">Produits</option>
+{loop type="category" name="optgroup"}
+{ifloop rel="prestation"}
+<optgroup label="{$TITLE}">
+{loop type="product" name="prestation" category=$ID order="manual"}
+<option value="{$ID}">{$REF} - {$TITLE}</option>
+{/loop}
+</optgroup>
+{/ifloop}
+{/loop}	
+{/if}
+{if $smarty.post.typeobj == 2}
+	<option value="">Dossiers</option>
+	{loop type="folder" name="folder"}
+	<option value="{$ID}">{$TITLE}</option>
+	{/loop}	
+{/if}
+
+{if $smarty.post.typeobj == 3}
+	<option value="">Contenus</option>
+	{loop type="folder" name="optgroup2"}
+	{ifloop rel="prestation2"}
+	<optgroup label="{$TITLE}">
+	{loop type="content" name="prestation2" folder=$ID order="manual"}
+	<option value="{$ID}">{$TITLE}</option>
+	{/loop}
+	</optgroup>
+	{/ifloop}
+	{/loop}	
+{/if}

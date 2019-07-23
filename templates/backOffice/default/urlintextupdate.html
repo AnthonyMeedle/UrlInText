@@ -1,0 +1,26 @@
+<div class="jumbotron" style="padding: 0.4em;">
+	<small>Sélectionner dans le champs "Description détaillée" le texte où vous voulez mettre un lien, ensuite choisissez vers quelque page le lien doit mener grâce aux liste déroulante ci-dessous puis cliquer sur "Lien interne"</small>
+	
+	<select name="typeobj" id="typeobj" class="form-control">
+		<option value="0">Catégorie</option>
+		<option value="1" selected>Produit</option>
+		<option value="2">Dossier</option>
+		<option value="3">Contenu</option>
+	</select>
+
+
+	<select name="idobj" id="idobj" class="form-control">
+		<option value=""></option>
+		{loop type="category" name="optgroup"}
+		{ifloop rel="prestation"}
+		<optgroup label="{$TITLE}">
+		{loop type="product" name="prestation" category=$ID order="manual"}
+		<option value="{$ID}">{$REF} - {$TITLE}</option>
+		{/loop}
+		</optgroup>
+		{/ifloop}
+		{/loop}				
+	</select>
+
+	<button type="button" class="btn btn-default urlintext">Lien interne</button>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<smartyfilters xmlns="urn:thelia:module:smarty-filter">
+    <smartyfilter code="smarty.filter.urlintext">
+        <descriptive locale="fr_FR">
+            <title>Url interne HTML</title>
+            <description>Url interne HTML</description>
+            <type>output</type>
+        </descriptive>
+        <descriptive locale="en_US">
+            <title>Url interne HTML</title>
+            <description>Url interne HTML</description>
+            <type>output</type>
+        </descriptive>
+    </smartyfilter>
+</smartyfilters>
